@@ -13,15 +13,27 @@ let startTime = "";
 let endTime = "";
 
 let spec = pactum.spec();
-
+let body
 Before(() => {
   spec = pactum.spec();
   startTime = performance.now();
+  body = {};
 });
 
-Given(/^Deseo hacer un post con json (.*)$/, (json) => {
+Given(/^Deseo hacer un post a (.*) con json (.*)$/, (path, json) => {
   let jsonBody = require("../datos/" + json + ".json");
-  spec.post(process.env.PATH_SIGNUP).withJson(jsonBody);
+  spec.post(path).withJson(jsonBody);
+});
+
+
+Given(/^Deseo agregar al body key: (.*), value: (.*)$/,function (key, value) {
+  body[key] = value;
+  }
+);
+
+Given(/^Deseo hacer un post con el body creado a (.*)$/,function (path) {
+  let jsonBody = body;
+  spec.post(path).withJson(jsonBody);
 });
 
 When("Recibimos el response", async function () {
@@ -41,17 +53,12 @@ Then(
   }
 );
 
-Then(
-  /^Valido response con key (.*) y con valor (.*)$/,
+Then(  /^Valido response con key (.*) y con valor (.*)$/,
   function (field, value) {
     const jsonData = spec._request.body;
     spec.response().should.have.jsonMatch(field, value);
   }
 );
-Then(/^Valido response con key (.*)$/, function (field) {
-  const jsonData = spec._request.body;
-  spec.response().should.have.jsonMatch(field);
-});
 
 After(() => {
   endTime = performance.now();
