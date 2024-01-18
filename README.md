@@ -33,5 +33,14 @@
     | usuario1 | contraseña1 |
     | usuario2 | contraseña1 |
   ```
+---
 
+### VARIABLE DE ENTORNO
+---
+  - en .env vamos a encontrar la URL base de la API y luego los paths
+    ```
+      ENVIRONMENT="https://api.demoblaze.com/"
+      PATH_SIGNUP="signup"
+      PATH_LOGIN="login"
+    ```
 ---
