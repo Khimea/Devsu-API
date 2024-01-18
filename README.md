@@ -2,7 +2,7 @@
 
 ## Proyecto desarrollado con [PactumJS](https://github.com/pactumjs/pactum) + [Cucumber-JS](https://github.com/cucumber/cucumber-js)
 
-- Dependencia deframework [NodeJS](https://nodejs.org/en/download)
+- Dependencia de framework [NodeJS](https://nodejs.org/en/download)
 ### Ejecucion simple
 
 ---
