@@ -1,0 +1,30 @@
+{
+  "name": "test_tech",
+  "version": "1.0.0",
+  "description": "Prueba Tecnica Devsu API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:cucumber": "cucumber-js features/funcionalidad/*.feature",
+    "test:resultado": "cucumber-js features/funcionalidad/demoReport.feature --format json:report/cucumber_report.json ; node report.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Khimea"
+  },
+  "keywords": [
+    "Cucumber",
+    "pactumjs"
+  ],
+  "author": "Jerez Leonardo",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "cucumber-html-reporter": "^7.1.1",
+    "pactum": "^3.6.0"
+  },
+  "dependencies": {
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
