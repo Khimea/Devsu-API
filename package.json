@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:cucumber": "cucumber-js features/funcionalidad/*.feature",
-    "test:resultado": "cucumber-js features/funcionalidad/demoReport.feature --format json:report/cucumber_report.json ; node report.js"
+    "test:report":"cucumber-js features/funcionalidad/*.feature -f @cucumber/pretty-formatter -f json:output/TestReport_$(timestamp).json "
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.1",
-    "cucumber-html-reporter": "^7.1.1",
     "pactum": "^3.6.0"
   },
   "dependencies": {

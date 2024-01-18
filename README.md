@@ -9,7 +9,8 @@
 
 - Clonar repo
 - Instalar dependencia `npm install`
-- lanzar test `npm run test:cucumber`
+- lanzar test sin reporte `npm run test:cucumber`
+- lanzar test con reporte `npm run test:report`
 
 
 ### Features

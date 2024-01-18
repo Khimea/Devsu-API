@@ -4,11 +4,9 @@ const {
   Then,
   Before,
   After,
-  JsonFormatter,
 } = require("@cucumber/cucumber");
 const pactum = require("pactum");
-const { request, settings } = require("pactum");
-const reporter = require("cucumber-html-reporter");
+const { request} = require("pactum");
 let startTime = "";
 let endTime = "";
 
