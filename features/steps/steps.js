@@ -21,7 +21,7 @@ Before(() => {
 
 Given(/^Deseo hacer un post con json (.*)$/, (json) => {
   let jsonBody = require("../datos/" + json + ".json");
-  spec.post("https://api.demoblaze.com/signup").withJson(jsonBody);
+  spec.post(process.env.PATH_SIGNUP).withJson(jsonBody);
 });
 
 When("Recibimos el response", async function () {
